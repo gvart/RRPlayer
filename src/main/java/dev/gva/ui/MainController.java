@@ -45,19 +45,9 @@ public class MainController implements Initializable {
             Optional<Integer> result = dialog.showAndWait();
 
             result.ifPresent(br -> {
-                Thread.getAllStackTraces().forEach((t,s)->{
-                    if(t.getName().contains(bitRate.toString())){
-                        t.stop();
-                    }
-
-                    gridPane.getChildren().forEach(c ->{
-                        if(c.getStyleClass().get(0).equals("selectedRadioBox")) {
-                            c.getStyleClass().add("radioBox");
-                        }
-                    });
-                });
-
                 bitRate = br;
+                ((RadioBox)gridPane.getUserData()).reloadWithNewBitrate();
+
             });
         });
 
@@ -79,7 +69,7 @@ public class MainController implements Initializable {
         dub.setup(new Image("images/dub.png"), "dub", "Record Dubstep");
         trap.setup(new Image("images/trap.png"), "trap", "Record Trap");
         teo.setup(new Image("images/teo.png"), "teo", "Record Hardstyle");
-        rock.setup(new Image("images/rock.png"), "rock", "Record Hardstyle");
+        rock.setup(new Image("images/rock.png"), "rock", "Rock Radio");
         pump.setup(new Image("images/pump.png"), "pump", "Pump'n'Klubb");
 
         gridPane.setUserData(null);
@@ -89,6 +79,5 @@ public class MainController implements Initializable {
     public void init(){
 
     }
-
 
 }

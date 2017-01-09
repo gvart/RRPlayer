@@ -48,6 +48,7 @@ public class RadioBox extends HBox {
                     ud.getStyleClass().add("radioBox");
                     Thread.getAllStackTraces().forEach((t,s)->{
                         if(t.getName().equals(ud.getUserData())){
+                            System.out.println("STOP:" + ud.getUserData());
                             t.stop();
                         }
                     });
@@ -86,5 +87,29 @@ public class RadioBox extends HBox {
 
     public void setStation(String station) {
         this.station = station;
+    }
+
+    public void reloadWithNewBitrate(){
+        Thread.getAllStackTraces().forEach((t,s)->{
+            if(t.getName().equals(getUserData())){
+                t.stop();
+            }
+        });
+        setUserData("http://air2.radiorecord.ru:805/" + station + "_" + MainController.bitRate);
+
+        Task task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                new RRBufferReader((String) getUserData()).play();
+                return null;
+            }
+        };
+
+        Thread th = new Thread(task);
+        th.setName((String)getUserData());
+        th.start();
+
+        getParent().setUserData(this);
+
     }
 }

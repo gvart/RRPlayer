@@ -4,6 +4,7 @@ package dev.gva;
 import dev.gva.config.AbstractJavaFxApplicationSupport;
 import dev.gva.config.ConfigurationControllers;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,6 +28,7 @@ public class Main extends AbstractJavaFxApplicationSupport {
         window.setScene(new Scene(view.getView()));
         window.getScene().getStylesheets().add("css/main.css");
         window.setResizable(false);
+        window.getIcons().add(new Image("images/icon.png"));
         window.centerOnScreen();
         window.setOnCloseRequest(event -> System.exit(0));
         window.show();
