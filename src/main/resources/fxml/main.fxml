@@ -1,0 +1,52 @@
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import dev.gva.ui.RadioBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<GridPane fx:id="gridPane" fx:controller="dev.gva.ui.MainController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10" styleClass="pane">
+
+    <!--Settings-->
+    <padding>
+        <Insets bottom="5" left="5" top="5" right="5"/>
+    </padding>
+    <columnConstraints>
+        <ColumnConstraints halignment="CENTER"/>
+    </columnConstraints>
+
+    <MenuBar>
+    </MenuBar>
+    <!--Add elements-->
+    <HBox fx:id="topBox" alignment="CENTER" spacing="170" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="3">
+        <ImageView fx:id="label" />
+        <ImageView fx:id="setting"  fitHeight="35" fitWidth="35"/>
+    </HBox>
+    <RadioBox fx:id="rr" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <RadioBox fx:id="sd" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <RadioBox fx:id="tm" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <RadioBox fx:id="rus" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <RadioBox fx:id="mdl" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <RadioBox fx:id="chil" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+    <RadioBox fx:id="club" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <RadioBox fx:id="gop" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <RadioBox fx:id="vip" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+    <RadioBox fx:id="ps" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <RadioBox fx:id="deep" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <RadioBox fx:id="brks" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+    <RadioBox fx:id="dc" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <RadioBox fx:id="dub" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <RadioBox fx:id="trap" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+    <RadioBox fx:id="teo" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <RadioBox fx:id="rock" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+    <RadioBox fx:id="pump" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+
+
+</GridPane>

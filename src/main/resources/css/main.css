@@ -1,0 +1,43 @@
+.label{
+    -fx-font-family: "Noto Sans CJK JP Medium";
+    -fx-text-fill: #495d5e;
+}
+
+.iv{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+.radioBox{
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+}
+
+.radioBox:hover{
+    -fx-cursor: hand;
+    -fx-opacity: 0.92;
+    -fx-border-color: red;
+    -fx-background-color: linear-gradient(to bottom right, #c0ff00, #e6f0c1);
+}
+
+.selectedRadioBox{
+    -fx-cursor: hand;
+    -fx-border-color: #ff7329;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-color:linear-gradient(to bottom right, red, #e6b42e);
+    -fx-opacity: 0.9;
+    -fx-text-fill: #b04d00;
+}
+
+.pane {
+    -fx-background-image: url("/images/main_background.png");
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: stretch;
+}
+
+.settings:hover{
+    -fx-cursor: hand;
+}
